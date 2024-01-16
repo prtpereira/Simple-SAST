@@ -1,0 +1,29 @@
+{
+  "vulnerabilities": [
+    {
+      "type": "SQL injection",
+      "file": "DB.go",
+      "line": 45
+    },
+    {
+      "type": "SQL injection",
+      "file": "DB.go",
+      "line": 47
+    },
+    {
+      "type": "Cross site scripting",
+      "file": "DB.go",
+      "line": 57
+    },
+    {
+      "type": "Sensitive data exposure",
+      "file": "checkmarx.txt",
+      "line": 21
+    },
+    {
+      "type": "Cross site scripting",
+      "file": "checkmarx.txt",
+      "line": 31
+    }
+  ]
+}

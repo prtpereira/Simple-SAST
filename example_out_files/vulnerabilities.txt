@@ -1,0 +1,5 @@
+[SQL injection] in file "DB.go" on line 45
+[SQL injection] in file "DB.go" on line 47
+[Cross site scripting] in file "DB.go" on line 57
+[Sensitive data exposure] in file "checkmarx.txt" on line 21
+[Cross site scripting] in file "checkmarx.txt" on line 31
