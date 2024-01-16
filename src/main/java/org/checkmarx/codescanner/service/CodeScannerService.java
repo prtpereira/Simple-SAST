@@ -3,6 +3,7 @@ package org.checkmarx.codescanner.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.checkmarx.codescanner.model.Vulnerability;
+import org.checkmarx.codescanner.util.EnvVarFetcher;
 import org.checkmarx.codescanner.util.security.CrossSiteScriptingChecker;
 import org.checkmarx.codescanner.util.security.SQLInjectionChecker;
 import org.checkmarx.codescanner.util.security.SecurityChecker;
@@ -25,6 +26,12 @@ import java.util.Set;
 import java.util.stream.IntStream;
 
 public class CodeScannerService {
+
+    private static final String OUTPUT_VULNERABILITIES_TXT = EnvVarFetcher.getEnvStrElseDefault("OUTPUT_VULNERABILITIES_TXT",
+            "./output_vulnerabilities/output.txt");
+
+    private static final String OUTPUT_VULNERABILITIES_JSON = EnvVarFetcher.getEnvStrElseDefault("OUTPUT_VULNERABILITIES_JSON",
+            "./output_vulnerabilities/output.json");
 
     public void scanFiles(String directoryPath, Set<Integer> scanSecurityConfigurations) {
 
@@ -62,8 +69,8 @@ public class CodeScannerService {
                     }
                 });
 
-            writeVulnerabilitiesToFile(vulnerabilities, "plaintext", "C:\\Users\\apere\\Repos\\challenges2023\\sast-checkmarx\\Simple-SAST\\output_vulnerabilities\\output.txt");
-            writeVulnerabilitiesToFile(vulnerabilities, "json", "C:\\Users\\apere\\Repos\\challenges2023\\sast-checkmarx\\Simple-SAST\\output_vulnerabilities\\output.json");
+            writeVulnerabilitiesToFile(vulnerabilities, "plaintext", OUTPUT_VULNERABILITIES_TXT);
+            writeVulnerabilitiesToFile(vulnerabilities, "json",      OUTPUT_VULNERABILITIES_JSON);
 
         } catch (IOException e) {
             System.err.println("Error scanning files in directory: " + e.getMessage());
@@ -85,7 +92,7 @@ public class CodeScannerService {
         return securityCheckers;
     }
 
-    public void writeVulnerabilitiesToFile(List<Vulnerability> vulnerabilities, String fileFormat, String filePath) { //or write all lines (previsouly stored in memory)
+    public void writeVulnerabilitiesToFile(List<Vulnerability> vulnerabilities, String fileFormat, String filePath) {
         switch (fileFormat) {
             case "plaintext": writeVulnerabilitiesToTxt(vulnerabilities, filePath); break;
             case "json": writeVulnerabilitiesToJson(vulnerabilities, filePath); break;
@@ -120,8 +127,8 @@ public class CodeScannerService {
 
             System.out.println("JSON data has been successfully written to: " + filePath);
 
-        } catch (IOException e) {
-            System.err.println("Error writing vulnerabilities to JSON file: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error writing vulnerabilities to JSON file: " + e.getMessage());
         }
     }
 
