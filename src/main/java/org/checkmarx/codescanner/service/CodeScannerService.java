@@ -3,10 +3,10 @@ package org.checkmarx.codescanner.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.checkmarx.codescanner.model.Vulnerability;
-import org.checkmarx.codescanner.util.CrossSiteScriptingChecker;
-import org.checkmarx.codescanner.util.SQLInjectionChecker;
-import org.checkmarx.codescanner.util.SecurityChecker;
-import org.checkmarx.codescanner.util.SensitiveDataChecker;
+import org.checkmarx.codescanner.util.security.CrossSiteScriptingChecker;
+import org.checkmarx.codescanner.util.security.SQLInjectionChecker;
+import org.checkmarx.codescanner.util.security.SecurityChecker;
+import org.checkmarx.codescanner.util.security.SensitiveDataChecker;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="028627b1-da67-44cd-bb8d-23d3a50b8a51" name="Changes" comment="" />
+    <list default="true" id="028627b1-da67-44cd-bb8d-23d3a50b8a51" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_out_files/vulnerabilities.json" beforeDir="false" afterPath="$PROJECT_DIR$/example_out_files/vulnerabilities.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_out_files/vulnerabilities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example_out_files/vulnerabilities.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -17,6 +30,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -35,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST",
+    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST/output_vulnerabilities",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,8 +64,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\output_vulnerabilities" />
       <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.checkmarx.codescanner.util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.Main" />
+      <module name="sast-checkmarx" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -58,11 +89,23 @@
       <option name="presentableId" value="Default" />
       <updated>1705245794793</updated>
       <workItem from="1705245796169" duration="690000" />
-      <workItem from="1705246499408" duration="580000" />
+      <workItem from="1705246499408" duration="4016000" />
+      <workItem from="1705320053934" duration="30810000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

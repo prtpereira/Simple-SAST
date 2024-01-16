@@ -1,7 +1,9 @@
-package org.checkmarx.codescanner.util;
+package org.checkmarx.codescanner.util.security;
 
 import java.util.AbstractMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class SecurityChecker {
 
@@ -26,4 +28,15 @@ public abstract class SecurityChecker {
 
     public abstract AbstractMap.SimpleEntry<String, Integer> run(String code);
 
+    protected AbstractMap.SimpleEntry<String, Integer> matchRegexPattern(String regexPattern, String code, String configurationName) {
+        Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(code);
+
+        int numVulns;
+        for(numVulns = 0; matcher.find(); numVulns++) {
+            System.out.println(configurationName + " detected. Found pattern: " + matcher.group());
+        }
+
+        return new AbstractMap.SimpleEntry<>(configurationName, numVulns);
+    }
 }
