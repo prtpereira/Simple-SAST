@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> 
+    Method test window.confirm() 
+</title> 
+<meta charset="utf-8">
+</head> 
+<body> 
+    <p>Chose one item to be removed:</p> 
+    <select name="itens" id="itens" size="6" style="width: 150px">
+        <option>Shirt</option>
+        <option>Pants</option>
+        <option>Shoes</option>
+        <option>Bag</option>
+    </select>
+    <br/>
+    <input type="button" value="Remove item" onclick=excluirItemSelecionado()>
+
+<script>
+    function excluirItemSelecionado(){
+        var itens = document.getElementById("itens");
+        if (itens.selectedIndex == -1){
+            return;
+        }
+        var indice = itens.options[itens.selectedIndex].index;
+        var itemSelecionado = itens.options[itens.selectedIndex].text;
+        var resultado = confirm("Do you want to remove this item: " + itemSelecionado + " ?");
+        if (resultado == true) {
+            itens.removeChild(itens[indice]);
+        }
+    }
+</script>
+</body> 
+</html> 
