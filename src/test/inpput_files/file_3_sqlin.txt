@@ -1,0 +1,8 @@
+hello
+SELECT * FROM Users WHERE UserId = 105; DROP TABLE Suppliers;
+txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "SELECT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2) WHERE asd = %s asdsadadaz";
+db.Execute(txtSQL,txtNam,txtAdd,txtCit);
+   "  .... SELECT .... WHERE .... %s .... "

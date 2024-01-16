@@ -1,0 +1,15 @@
+Who are we?
+
+*** is the enterprise application security *** and the host of *** One™ — the industry -leading cloud-native AppSec platform that helps enterprises build #DevSecTrust.
+
+Powered by the intelligence from our industry-leading AppSec security research team, and our AI-driven technology and services, our platform is designed to enable CISOs, AppSec and development ***s to prioritize their teams’ focus on what impacts their business.
+
+Our offerings secure every phase of development for every application, from the very first line of code through production, while simultaneously balancing the dynamic needs of security and development teams.
+
+We are honored to serve more than 1,800 customers, which includes 60 percent of all Fortune 100 organizations. We are committed to moving forward with the unwavering dedication to the safety and security of our customers, and the applications that power our day-to-day lives. 
+
+What are we looking for?
+
+﻿We are looking for enthusiastic, experienced, and versatile backend engineer for taking over multiple development responsibilities under the *** One group.
+
+We are working with the most cutting edge technologies, building a new and exciting cloud platform using mainly – Golang, gRPC, Redis, PostgreSQL, Kubernetes, Docker and more.

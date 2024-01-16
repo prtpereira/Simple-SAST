@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60653de-8ece-4ffc-8aa0-8c24a6bcf600" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/EnvVarFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_1_XSS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_1_noXSS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_2_noSensitive.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_2_sensitive.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_3_sqlin.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/integration/CodeScannerServiceIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/unit/security/SecurityCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST",
+    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST/src/test/inpput_files",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\src\test\inpput_files" />
       <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST" />
       <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\output_vulnerabilities" />
     </key>
@@ -75,7 +78,7 @@
       <recent name="org.checkmarx.codescanner.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CodeScannerServiceIT">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.Main" />
       <module name="sast-checkmarx" />
@@ -83,13 +86,82 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
+    <configuration name="CodeScannerServiceIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sast-checkmarx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.checkmarx.codescanner.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.checkmarx.codescanner.integration" />
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.integration.CodeScannerServiceIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLInjectionCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sast-checkmarx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.checkmarx.codescanner.unit.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.checkmarx.codescanner.unit.security" />
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.unit.security.SQLInjectionCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLInjectionCheckerTest.testMultipleSQLInjectionChecker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sast-checkmarx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.checkmarx.codescanner.unit.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.checkmarx.codescanner.unit.security" />
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.unit.security.SQLInjectionCheckerTest" />
+      <option name="METHOD_NAME" value="testMultipleSQLInjectionChecker" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLInjectionCheckerTest.testSQLInjectionChecker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sast-checkmarx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.checkmarx.codescanner.unit.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.checkmarx.codescanner.unit.security" />
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.unit.security.SQLInjectionCheckerTest" />
+      <option name="METHOD_NAME" value="testSQLInjectionChecker" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sast-checkmarx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.checkmarx.codescanner.unit.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.checkmarx.codescanner.unit.security" />
+      <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.unit.security.SecurityCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml" />
@@ -99,23 +171,21 @@
       <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Docker.Dockerfile" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.CodeScannerServiceIT" />
+      <item itemvalue="JUnit.SQLInjectionCheckerTest" />
+      <item itemvalue="JUnit.SQLInjectionCheckerTest.testMultipleSQLInjectionChecker" />
+      <item itemvalue="JUnit.SQLInjectionCheckerTest.testSQLInjectionChecker" />
+      <item itemvalue="JUnit.SecurityCheckerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="JUnit.CodeScannerServiceIT" />
+        <item itemvalue="JUnit.SecurityCheckerTest" />
+        <item itemvalue="JUnit.SQLInjectionCheckerTest" />
+        <item itemvalue="JUnit.SQLInjectionCheckerTest.testMultipleSQLInjectionChecker" />
+        <item itemvalue="JUnit.SQLInjectionCheckerTest.testSQLInjectionChecker" />
       </list>
     </recent_temporary>
   </component>
