@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Security configurations selected: " + securityConfigurations);
         System.out.println("==== \n");
 
-        codeScannerService.scanFiles(sourceCodeDirectory, securityConfigurations);
+        codeScannerService.run(sourceCodeDirectory, securityConfigurations);
     }
 
 }

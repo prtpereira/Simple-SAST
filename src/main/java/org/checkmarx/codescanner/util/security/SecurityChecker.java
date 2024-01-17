@@ -26,7 +26,7 @@ public abstract class SecurityChecker {
         return securityConfigurationName;
     }
 
-    public abstract AbstractMap.SimpleEntry<String, Integer> run(String code);
+    public abstract AbstractMap.SimpleEntry<String, Integer> detect(String code);
 
     protected AbstractMap.SimpleEntry<String, Integer> matchRegexPattern(String regexPattern, String code, String configurationName) {
         Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE);

@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60653de-8ece-4ffc-8aa0-8c24a6bcf600" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_1_XSS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_1_noXSS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_2_noSensitive.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_2_sensitive.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/inpput_files/file_3_sqlin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/integration/CodeScannerServiceIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/unit/security/SecurityCheckerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/VulnerabilityFinderCallable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/service/CodeScannerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/CrossSiteScriptingChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/CrossSiteScriptingChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SQLInjectionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SQLInjectionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SecurityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SecurityChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SensitiveDataChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/checkmarx/codescanner/util/security/SensitiveDataChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/unit/security/SecurityCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/checkmarx/codescanner/unit/security/SecurityCheckerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST/src/test/inpput_files",
+    "last_opened_file_path": "C:/Users/apere/Repos/challenges2023/sast-checkmarx/Simple-SAST",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,8 +69,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\src\test\inpput_files" />
       <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST" />
+      <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\src\test\inpput_files" />
       <recent name="C:\Users\apere\Repos\challenges2023\sast-checkmarx\Simple-SAST\output_vulnerabilities" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -78,7 +78,7 @@
       <recent name="org.checkmarx.codescanner.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeScannerServiceIT">
+  <component name="RunManager" selected="JUnit.SecurityCheckerTest">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.checkmarx.codescanner.Main" />
       <module name="sast-checkmarx" />
@@ -181,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CodeScannerServiceIT" />
         <item itemvalue="JUnit.SecurityCheckerTest" />
+        <item itemvalue="JUnit.CodeScannerServiceIT" />
         <item itemvalue="JUnit.SQLInjectionCheckerTest" />
         <item itemvalue="JUnit.SQLInjectionCheckerTest.testMultipleSQLInjectionChecker" />
         <item itemvalue="JUnit.SQLInjectionCheckerTest.testSQLInjectionChecker" />

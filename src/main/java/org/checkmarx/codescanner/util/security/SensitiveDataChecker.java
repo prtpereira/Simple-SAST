@@ -11,7 +11,7 @@ public class SensitiveDataChecker extends SecurityChecker {
         super();
     }
 
-    public AbstractMap.SimpleEntry<String, Integer> run(String code) {
+    public AbstractMap.SimpleEntry<String, Integer> detect(String code) {
         String sensitiveWordsRegex = "\\b(?:Checkmarx|Gartner|Leader)\\b";
 
         return matchRegexPattern(sensitiveWordsRegex, code, securityConfigurationName);

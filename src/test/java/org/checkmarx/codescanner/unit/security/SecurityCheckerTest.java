@@ -21,7 +21,7 @@ public class SecurityCheckerTest {
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("Cross site scripting", 2);
 
-        Assert.assertEquals(expectedOutput, crossSiteScriptingChecker.run(code));
+        Assert.assertEquals(expectedOutput, crossSiteScriptingChecker.detect(code));
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SecurityCheckerTest {
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("Sensitive data exposure", 3);
 
-        Assert.assertEquals(expectedOutput, sensitiveDataChecker.run(code));
+        Assert.assertEquals(expectedOutput, sensitiveDataChecker.detect(code));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class SecurityCheckerTest {
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("Sensitive data exposure", 0);
 
-        Assert.assertEquals(expectedOutput, sensitiveDataChecker.run(code));
+        Assert.assertEquals(expectedOutput, sensitiveDataChecker.detect(code));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class SecurityCheckerTest {
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("SQL Injection", 1);
 
-        Assert.assertEquals(expectedOutput, sqlInjectionChecker.run(code));
+        Assert.assertEquals(expectedOutput, sqlInjectionChecker.detect(code));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class SecurityCheckerTest {
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("SQL Injection", 2);
 
-        Assert.assertEquals(expectedOutput, sqlInjectionChecker.run(code));
+        Assert.assertEquals(expectedOutput, sqlInjectionChecker.detect(code));
     }
 
 }

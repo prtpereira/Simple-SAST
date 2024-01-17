@@ -11,7 +11,7 @@ public class CrossSiteScriptingChecker extends SecurityChecker {
         super();
     }
 
-    public AbstractMap.SimpleEntry<String, Integer> run(String code) {
+    public AbstractMap.SimpleEntry<String, Integer> detect(String code) {
         String xssRegex = "\\bAlert\\s*\\((.*?)\\)";
 
         return matchRegexPattern(xssRegex, code, configurationName);
