@@ -32,9 +32,10 @@ public abstract class SecurityChecker {
         Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(code);
 
-        int numVulns;
-        for(numVulns = 0; matcher.find(); numVulns++) {
-            System.out.println(configurationName + " detected. Found pattern: " + matcher.group());
+        int numVulns = 0;
+        while(matcher.find()) {
+            numVulns++;
+            //System.out.println(configurationName + " detected. Found pattern: " + matcher.group());
         }
 
         return new AbstractMap.SimpleEntry<>(configurationName, numVulns);

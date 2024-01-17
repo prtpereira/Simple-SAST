@@ -12,7 +12,7 @@ public class SQLInjectionChecker extends SecurityChecker {
     }
 
     public AbstractMap.SimpleEntry<String, Integer> detect(String code) {
-        String sqlInjectionRegex = "\"[^\"']*\\b(SELECT|WHERE|%s)\\b[^\"']*\"";
+        String sqlInjectionRegex = "\"[^\"']*\\b(SELECT.*WHERE.*%s)\\b[^\"']*\"";
 
         return matchRegexPattern(sqlInjectionRegex, code, securityConfigurationName);
     }

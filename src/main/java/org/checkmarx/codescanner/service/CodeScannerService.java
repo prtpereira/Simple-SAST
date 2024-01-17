@@ -47,24 +47,30 @@ public class CodeScannerService {
                     Future<List<Vulnerability>> futureResult = threadPool.submit(new VulnerabilityFinderCallable(file.toString(), securityCheckers));
                     futures.add(futureResult);
                 });
+        } catch (IOException e) {
+            System.err.println("Error scanning files in directory. Error: " + e.getMessage());
+            threadPool.shutdown();
+            return;
+        }
 
-            for (Future<List<Vulnerability>> future : futures) {
-                try {
-                    List<Vulnerability> result = future.get();
-                    vulnerabilities.addAll(result);
+        for (Future<List<Vulnerability>> future : futures) {
+            try {
+                List<Vulnerability> result = future.get();
+                vulnerabilities.addAll(result);
 
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
+            } catch (InterruptedException | ExecutionException e) {
+                System.err.println("Error fetching pending result from thread. Error:" + e.getMessage());
             }
+        }
 
+        if (vulnerabilities.isEmpty()) {
+            System.out.println("No vulnerabilities detected. Not writing any data to output files...");
+        } else {
             writeVulnerabilitiesToFile(vulnerabilities, "plaintext", OUTPUT_VULNERABILITIES_TXT);
             writeVulnerabilitiesToFile(vulnerabilities, "json",      OUTPUT_VULNERABILITIES_JSON);
-
-            threadPool.shutdown();
-        } catch (IOException e) {
-            System.err.println("Error scanning files in directory: " + e.getMessage());
         }
+
+        threadPool.shutdown();
     }
 
     private List<SecurityChecker> buildSecurityCheckers(Set<Integer> scanSecurityConfigurations) {
@@ -72,10 +78,10 @@ public class CodeScannerService {
 
         scanSecurityConfigurations.forEach( id -> {
             switch (id) {
-                case 1: securityCheckers.add( new CrossSiteScriptingChecker() ); break;
-                case 2: securityCheckers.add( new SensitiveDataChecker() ); break;
-                case 3: securityCheckers.add( new SQLInjectionChecker() ); break;
-                default: break;
+                case 1 -> securityCheckers.add(new CrossSiteScriptingChecker());
+                case 2 -> securityCheckers.add(new SensitiveDataChecker());
+                case 3 -> securityCheckers.add(new SQLInjectionChecker());
+                default -> System.err.println("There is not an available Security Checker Scanner with the id '" + id + "'");
             }
         });
 
@@ -84,9 +90,9 @@ public class CodeScannerService {
 
     public void writeVulnerabilitiesToFile(List<Vulnerability> vulnerabilities, String fileFormat, String filePath) {
         switch (fileFormat) {
-            case "plaintext": writeVulnerabilitiesToTxt(vulnerabilities, filePath); break;
-            case "json": writeVulnerabilitiesToJson(vulnerabilities, filePath); break;
-            default: break;
+            case "plaintext" -> writeVulnerabilitiesToTxt(vulnerabilities, filePath);
+            case "json" -> writeVulnerabilitiesToJson(vulnerabilities, filePath);
+            default -> System.err.println("File format '" + fileFormat + "' is not supported.");
         }
     }
 
@@ -103,8 +109,8 @@ public class CodeScannerService {
 
             System.out.println("Plaintext data has been successfully written to: " + filePath);
 
-        } catch (Exception e) {
-            System.err.println("Error writing vulnerabilities to plaintext file: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("File cannot be created or opened: " + filePath + " Error: " + e.getMessage());
         }
     }
 
@@ -117,7 +123,7 @@ public class CodeScannerService {
 
             System.out.println("JSON data has been successfully written to: " + filePath);
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error writing vulnerabilities to JSON file: " + e.getMessage());
         }
     }

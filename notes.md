@@ -61,4 +61,11 @@ Performance will be better with this approach since I/O bottlenecks will be lowe
 
 ### 1) concurrency strategy
 
+The threadpool will spawn multiples threads. Each one will be responsible for scanning one file and detect eventual vulnerabilities present into it.
+
+Each thread will return the detected vulnerabilities to the 'thread father' (threadpool manager).
+
+When the main thread receives all the detected vulnerabilities, these will be printed into a plaintext file and a json file.
+
 ### 2) number of threads
+
