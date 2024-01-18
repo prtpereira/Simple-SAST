@@ -17,9 +17,10 @@ public class Main {
         CodeScannerService codeScannerService = new CodeScannerService();
 
         System.out.println("Please enter the source code path to be scanned: ");
-        String sourceCodeDirectory = scanner.nextLine();
-        // String sourceCodeDirectory = EnvVarFetcher.getEnvStrElseDefault("INPUT_SRC_FILES_DIR",
-        //       "./aa");
+        String inputPath = scanner.nextLine();
+        //String inputPath = EnvVarFetcher.getEnvStrElseDefault("INPUT_PATH", "./input");
+
+        String outputPath = EnvVarFetcher.getEnvStrElseDefault("OUTPUT_PATH", "./output");
 
         System.out.println("Please enter your desired types of security checks to be performed:");
         System.out.println("(Select from these options: " + SecurityChecker.SECURITY_CHECKER_CONFIGURATIONS + ")");
@@ -29,11 +30,11 @@ public class Main {
         // scanConfigurations = new HashSet<>(){{ add(1); add(2); add(3); }};
 
         System.out.println("\n==== ");
-        System.out.println("Path introduced: " + sourceCodeDirectory);
+        System.out.println("Path introduced: " + inputPath);
         System.out.println("Security configurations selected: " + scanConfigurations);
         System.out.println("==== \n");
 
-        codeScannerService.run(sourceCodeDirectory, scanConfigurations);
+        codeScannerService.run(inputPath, outputPath, scanConfigurations);
     }
 
 }

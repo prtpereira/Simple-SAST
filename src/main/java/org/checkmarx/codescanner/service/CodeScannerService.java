@@ -3,7 +3,6 @@ package org.checkmarx.codescanner.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.checkmarx.codescanner.model.Vulnerability;
-import org.checkmarx.codescanner.util.EnvVarFetcher;
 import org.checkmarx.codescanner.util.security.CrossSiteScriptingChecker;
 import org.checkmarx.codescanner.util.security.SQLInjectionChecker;
 import org.checkmarx.codescanner.util.security.SecurityChecker;
@@ -25,14 +24,7 @@ import java.util.concurrent.Future;
 
 public class CodeScannerService {
 
-    private static final String OUTPUT_VULNERABILITIES_TXT = EnvVarFetcher.getEnvStrElseDefault("OUTPUT_VULNERABILITIES_TXT",
-            "./output_vulnerabilities/output.txt");
-
-    private static final String OUTPUT_VULNERABILITIES_JSON = EnvVarFetcher.getEnvStrElseDefault("OUTPUT_VULNERABILITIES_JSON",
-            "./output_vulnerabilities/output.json");
-
-
-    public void run(String directoryPath, Set<Integer> scanSecurityConfigurations) {
+    public void run(String inputPath, String outputPath, Set<Integer> scanSecurityConfigurations) {
 
         ExecutorService threadPool = Executors.newCachedThreadPool();
         List<Future<List<Vulnerability>>> futures = new ArrayList<>();
@@ -41,7 +33,7 @@ public class CodeScannerService {
         List<Vulnerability> vulnerabilities = new ArrayList<>();
 
         try {
-            Files.walk(Paths.get(directoryPath))
+            Files.walk(Paths.get(inputPath))
                 .filter(Files::isRegularFile)
                 .forEach(file -> {
                     Future<List<Vulnerability>> futureResult = threadPool.submit(new VulnerabilityFinderCallable(file.toString(), securityCheckers));
@@ -66,8 +58,8 @@ public class CodeScannerService {
         if (vulnerabilities.isEmpty()) {
             System.out.println("No vulnerabilities detected. Not writing any data to output files...");
         } else {
-            writeVulnerabilitiesToFile(vulnerabilities, "plaintext", OUTPUT_VULNERABILITIES_TXT);
-            writeVulnerabilitiesToFile(vulnerabilities, "json",      OUTPUT_VULNERABILITIES_JSON);
+            writeVulnerabilitiesToFile(vulnerabilities, "plaintext", outputPath);
+            writeVulnerabilitiesToFile(vulnerabilities, "json",      outputPath);
         }
 
         threadPool.shutdown();
@@ -88,10 +80,10 @@ public class CodeScannerService {
         return securityCheckers;
     }
 
-    public void writeVulnerabilitiesToFile(List<Vulnerability> vulnerabilities, String fileFormat, String filePath) {
+    public void writeVulnerabilitiesToFile(List<Vulnerability> vulnerabilities, String fileFormat, String outputPath) {
         switch (fileFormat) {
-            case "plaintext" -> writeVulnerabilitiesToTxt(vulnerabilities, filePath);
-            case "json" -> writeVulnerabilitiesToJson(vulnerabilities, filePath);
+            case "plaintext" -> writeVulnerabilitiesToTxt(vulnerabilities, outputPath + "/vulnerabilities.txt");
+            case "json"      -> writeVulnerabilitiesToJson(vulnerabilities, outputPath + "/vulnerabilities.json");
             default -> System.err.println("File format '" + fileFormat + "' is not supported.");
         }
     }

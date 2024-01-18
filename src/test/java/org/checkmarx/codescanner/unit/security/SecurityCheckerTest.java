@@ -53,8 +53,8 @@ public class SecurityCheckerTest {
 
     @Test
     public void testMultipleSQLInjectionChecker() {
-        String code = "txtSQL = \"SELECT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2) WHERE asd = %s asdsadadaz\"; hello\\" +
-                "\"  .... SELECT .... WHERE .... %s .... \"n";
+        String code = "txtSQL = \"SELECT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2) WHERE asd = %s asdsadadaz\" \n" +
+                "   \"  .... SELECT .... WHERE .... %s .... \"";
 
         AbstractMap.SimpleEntry<String, Integer> expectedOutput = new AbstractMap.SimpleEntry<>("SQL Injection", 2);
 

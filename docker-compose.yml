@@ -8,9 +8,8 @@ services:
       target: release_img
     container_name: app_checkmarx
     environment:
-      - INPUT_SRC_FILES_DIR=/usr/src/app/input_src_files
-      - OUTPUT_VULNERABILITIES_TXT=/usr/src/app/output_vulnerabilities/output.txt
-      - OUTPUT_VULNERABILITIES_JSON=/usr/src/app/output_vulnerabilities/output.json
+      - INPUT_PATH=/usr/src/app/input
+      - OUTPUT_PATH=/usr/src/app/output
     volumes:
-      - ./input_src_files:/usr/src/app/input_src_files
-      - ./output_vulnerabilities:/usr/src/app/output_vulnerabilities
+      - ./input:/usr/src/app/input
+      - ./output:/usr/src/app/output

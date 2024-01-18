@@ -1,0 +1,41 @@
+[ {
+  "fileName" : ".\\src\\test\\input\\file_1_XSS.html",
+  "vulnerabilityType" : "Cross site scripting",
+  "lineNumber" : 24
+}, {
+  "fileName" : ".\\src\\test\\input\\file_1_XSS.html",
+  "vulnerabilityType" : "Cross site scripting",
+  "lineNumber" : 24
+}, {
+  "fileName" : ".\\src\\test\\input\\file_1_XSS.html",
+  "vulnerabilityType" : "Cross site scripting",
+  "lineNumber" : 32
+}, {
+  "fileName" : ".\\src\\test\\input\\file_1_XSS.html",
+  "vulnerabilityType" : "Cross site scripting",
+  "lineNumber" : 35
+}, {
+  "fileName" : ".\\src\\test\\input\\file_2_sensitive.txt",
+  "vulnerabilityType" : "Sensitive data exposure",
+  "lineNumber" : 3
+}, {
+  "fileName" : ".\\src\\test\\input\\file_2_sensitive.txt",
+  "vulnerabilityType" : "Sensitive data exposure",
+  "lineNumber" : 3
+}, {
+  "fileName" : ".\\src\\test\\input\\file_2_sensitive.txt",
+  "vulnerabilityType" : "Sensitive data exposure",
+  "lineNumber" : 3
+}, {
+  "fileName" : ".\\src\\test\\input\\file_2_sensitive.txt",
+  "vulnerabilityType" : "Sensitive data exposure",
+  "lineNumber" : 13
+}, {
+  "fileName" : ".\\src\\test\\input\\file_3_sqlin.txt",
+  "vulnerabilityType" : "SQL Injection",
+  "lineNumber" : 6
+}, {
+  "fileName" : ".\\src\\test\\input\\file_3_sqlin.txt",
+  "vulnerabilityType" : "SQL Injection",
+  "lineNumber" : 8
+} ]

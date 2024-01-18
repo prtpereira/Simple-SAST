@@ -1,0 +1,10 @@
+[Cross site scripting] in file ".\src\test\input\file_1_XSS.html" on line 24
+[Cross site scripting] in file ".\src\test\input\file_1_XSS.html" on line 24
+[Cross site scripting] in file ".\src\test\input\file_1_XSS.html" on line 32
+[Cross site scripting] in file ".\src\test\input\file_1_XSS.html" on line 35
+[Sensitive data exposure] in file ".\src\test\input\file_2_sensitive.txt" on line 3
+[Sensitive data exposure] in file ".\src\test\input\file_2_sensitive.txt" on line 3
+[Sensitive data exposure] in file ".\src\test\input\file_2_sensitive.txt" on line 3
+[Sensitive data exposure] in file ".\src\test\input\file_2_sensitive.txt" on line 13
+[SQL Injection] in file ".\src\test\input\file_3_sqlin.txt" on line 6
+[SQL Injection] in file ".\src\test\input\file_3_sqlin.txt" on line 8

@@ -16,7 +16,7 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/target/sast-checkmarx-1.0-SNAPSHOT.jar sast-checkmarx.jar
 
 # Create input and output directories
-RUN mkdir input_src_files output_vulnerabilities
-COPY input_src_files/* input_src_files/
+RUN mkdir input output
+COPY input/* input/
 
 CMD ["java", "-jar", "sast-checkmarx.jar"]
