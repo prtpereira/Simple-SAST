@@ -68,7 +68,7 @@ public final class CodeScannerService {
             System.out.println("No vulnerabilities detected. Not writing any data to output files...");
         } else {
             vulnerabilityWriter.writeToFile(vulnerabilities, "plaintext", outputPath);
-            vulnerabilityWriter.writeToFile(vulnerabilities, "json",      outputPath);
+            //vulnerabilityWriter.writeToFile(vulnerabilities, "json",      outputPath);
         }
 
         threadPool.shutdown();

@@ -5,18 +5,16 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 COPY src src
-RUN mvn package
-# RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 
-FROM openjdk:17-slim as release_img
+FROM openjdk:17 as release_img
 WORKDIR /usr/src/app
 
-# Copy the JAR file from the build stage
 COPY --from=build /usr/src/app/target/sast-checkmarx-1.0-SNAPSHOT.jar sast-checkmarx.jar
 
-# Create input and output directories
 RUN mkdir input output
 COPY input/* input/
+COPY input_params.txt .
 
 CMD ["java", "-jar", "sast-checkmarx.jar"]
